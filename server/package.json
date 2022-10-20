@@ -10,6 +10,11 @@
   "author": "Alvin",
   "license": "MIT",
   "dependencies": {
+    "@google-cloud/pubsub": "1.5.0",
+    "@graphql-yoga/node": "^2.13.13",
+    "google-gax": "1.14.1",
+    "googleapis": "47.0.0",
+    "graphql": "^16.6.0",
     "graphql-yoga": "^2.13.13"
   }
 }

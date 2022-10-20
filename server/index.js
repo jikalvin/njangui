@@ -1,4 +1,9 @@
-const { GraphQLServer, PubSub } = require("graphql-yoga");
+// const graphql_yoga = require("graphql-yoga");
+// import { createServer } from '@graphql-yoga/node'
+const { createServer } = require("@graphql-yoga/node");
+
+// const { GraphQLServer } = require("graphql-yoga");
+const {PubSub} = require(`@google-cloud/pubsub`);
 
 const pubsub = new PubSub();        //publication subscriptions api to be used
 
@@ -58,7 +63,9 @@ const resolvers = {
   },
 };
 
-const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub } });
+const server = createServer({ typeDefs, resolvers, context: { pubsub } });
+
+// const server = new GraphQLServer({ typeDefs, resolvers, context: { pubsub } });
 server.start(({ port }) => {
   console.log(`Server on http://localhost:${port}/`);
 });
